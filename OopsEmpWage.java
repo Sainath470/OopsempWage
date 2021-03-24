@@ -48,7 +48,7 @@ public class OopsEmpWage
 		public static void main(String args[])
 		{
 			OopsEmpWage emp1=new OopsEmpWage();
-			emp1.EmpCheck();//calling EmpCheck emthod using object
+			emp1.EmpCheck();//calling EmpCheck emthod using object.
 		}
 
 }
