@@ -6,12 +6,13 @@ public class OopsEmpWage
 		// any where in class or inside method
 		static int TotalWage=0;
 		static int WagePerHr=20;
-		static int Full_time=8;
+		static int Full_Time=8;
+		static int Part_Time=4;
 
 		public static int attendance()
 		{
 		Random emp = new Random();
-		int attend=emp.nextInt(2);
+		int attend=emp.nextInt(3);
 		return attend;
 		}
 
@@ -19,16 +20,29 @@ public class OopsEmpWage
 		public void EmpCheck()
 		{
 			int check=attendance();
-			if(check==0)
+			switch(check)
 			{
-				System.out.println("Employee is Present");
-				TotalWage+=Full_time*WagePerHr;
-				System.out.println("Total Wage is "+TotalWage);
+				case 0:
+					System.out.println("Employee is Present");
+					TotalWage+=Full_Time*WagePerHr;
+					System.out.println("Total Wage for full time work is "+TotalWage);
+					break;
+
+				case 1:
+					System.out.println("Employee is present and done part time work");
+					TotalWage+=Part_Time*WagePerHr;
+					System.out.println("Total Wage for part time work is "+TotalWage);
+					break;
+
+				case 2:
+					System.out.println("Employee is Absent");
+					break;
+
+				default:
+					System.out.println("Invalid");
+					break;
 			}
-			else
-			{
-				System.out.println("Employee is Absent");
-			}
+
 		}
 
 		public static void main(String args[])
