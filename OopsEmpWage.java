@@ -20,32 +20,30 @@ public class OopsEmpWage
 		//method to check whether employee is present or not
 		public void EmpCheck()
 		{
-			int WorkingDay=0;
+			int WorkingDays=0;
 			int check=attendance();
-			while(WorkingDay<=TotalWorkingDays)
+
+			while((WorkingDays<=TotalWorkingDays)&&(WorkingHrs<100))
 			{
-				WorkingDay++;
-				switch(check)
-				{
-					case 0:
-							WorkingHrs+=Full_Time;
-							break;
+					switch(check)
+					{
+						case 0:
+								WorkingHrs+=Full_Time;
+								break;
 
-					case 1:
-							WorkingHrs+=Part_Time;
-							break;
+						case 1:
+								WorkingHrs+=Part_Time;
+								break;
 
-					case 2:
-							break;
-
-					default:
-							System.out.println("Invalid");
-							break;
-				}
+						default:
+								System.out.println("Employee is Absent");
+								break;
+					}
+					WorkingDays++;
 			}
 			System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
-
 		}
+
 
 		public static void main(String args[])
 		{
