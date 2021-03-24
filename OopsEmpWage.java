@@ -4,10 +4,11 @@ public class OopsEmpWage
 {
 		//initializing variables using static so that they can use
 		// any where in class or inside method
-		static int TotalWage=0;
+		static int WorkingHrs=0;
 		static int WagePerHr=20;
 		static int Full_Time=8;
 		static int Part_Time=4;
+		static int TotalWorkingDays=20;
 
 		public static int attendance()
 		{
@@ -19,29 +20,30 @@ public class OopsEmpWage
 		//method to check whether employee is present or not
 		public void EmpCheck()
 		{
+			int WorkingDay=0;
 			int check=attendance();
-			switch(check)
+			while(WorkingDay<=TotalWorkingDays)
 			{
-				case 0:
-					System.out.println("Employee is Present");
-					TotalWage+=Full_Time*WagePerHr;
-					System.out.println("Total Wage for full time work is "+TotalWage);
-					break;
+				WorkingDay++;
+				switch(check)
+				{
+					case 0:
+							WorkingHrs+=Full_Time;
+							break;
 
-				case 1:
-					System.out.println("Employee is present and done part time work");
-					TotalWage+=Part_Time*WagePerHr;
-					System.out.println("Total Wage for part time work is "+TotalWage);
-					break;
+					case 1:
+							WorkingHrs+=Part_Time;
+							break;
 
-				case 2:
-					System.out.println("Employee is Absent");
-					break;
+					case 2:
+							break;
 
-				default:
-					System.out.println("Invalid");
-					break;
+					default:
+							System.out.println("Invalid");
+							break;
+				}
 			}
+			System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
 
 		}
 
