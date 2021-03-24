@@ -12,15 +12,22 @@ public class OopsEmpWage
 
 		public static int attendance()
 		{
-		Random emp = new Random();
-		int attend=emp.nextInt(3);
-		return attend;
+			Random emp = new Random();
+			int attend=emp.nextInt(3);
+			return attend;
 		}
 
-		//method to check whether employee is present or not
+
+		public static void EmployeeWageCal()
+		{
+			System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
+
+		}
+
+		//method to check whether employee is present or not and calculate working hrs
 		public void EmpCheck()
 		{
-			int WorkingDays=0;
+			int WorkingDays=1;
 			int check=attendance();
 
 			while((WorkingDays<=TotalWorkingDays)&&(WorkingHrs<100))
@@ -28,7 +35,7 @@ public class OopsEmpWage
 					switch(check)
 					{
 						case 0:
-								WorkingHrs+=Full_Time;
+								System.out.println("Employee is Absent on " +WorkingDays+" Day");
 								break;
 
 						case 1:
@@ -36,12 +43,12 @@ public class OopsEmpWage
 								break;
 
 						default:
-								System.out.println("Employee is Absent");
+								WorkingHrs+=Full_Time;
 								break;
 					}
 					WorkingDays++;
 			}
-			System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
+			EmployeeWageCal();
 		}
 
 
