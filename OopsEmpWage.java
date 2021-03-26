@@ -21,10 +21,11 @@ public class OopsEmpWage
 		public void EmpCheck()
 		{
 			int WorkingDays=0;
-			int check=attendance();
 
 			while((WorkingDays<=TotalWorkingDays)&&(WorkingHrs<100))
 			{
+							int check=attendance();
+
 					switch(check)
 					{
 						case 0:
@@ -41,7 +42,7 @@ public class OopsEmpWage
 					}
 					WorkingDays++;
 			}
-			System.out.println("Total Wage is "+WorkingHrs*WagePerHr);
+			System.out.println("Total Wage for 20 days is "+WorkingHrs*WagePerHr);
 		}
 
 
